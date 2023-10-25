@@ -23,18 +23,17 @@ func removeNthLastNode(head *EduLinkedListNode, n int) *EduLinkedListNode {
 	left := head
 	right := head
 	steps := 0
-	for right.next != nil && steps < n {
+	for steps < n {
 		steps += 1
 		right = right.next
+	}
+	if right == nil {
+		return head.next
 	}
 	for right.next != nil {
 		right = right.next
 		left = left.next
 	}
-	if left == head {
-		head = left.next
-	} else {
-		left.next = left.next.next
-	}
+	left.next = left.next.next
 	return head
 }
