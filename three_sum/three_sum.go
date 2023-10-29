@@ -1,7 +1,6 @@
 package three_sum
 
 import (
-	"fmt"
 	"sort"
 )
 
@@ -14,7 +13,6 @@ func findSumOfThree(nums []int, target int) bool {
 	for pointer < len(nums)-2 {
 		start := pointer + 1
 		end := len(nums) - 1
-		fmt.Println("st  end, pointer ")
 		for start < end {
 			s := nums[pointer] + nums[start] + nums[end]
 			if s == target {
