@@ -63,13 +63,16 @@ class MinHeap {
 }
 
 let minHeap = new MinHeap()
-minHeap.add(3)
-minHeap.add(2)
-minHeap.add(10)
-minHeap.add(1)
-minHeap.add(4)
-minHeap.add(-35)
-minHeap.add(-45)
+let arr = [[-8,-7,-7,-5,1,1,3,4],[-2],[-10,-10,-7,0,1,3],[2]]
+// console.log(arr.flat());
+arr.flat().forEach(a => minHeap.add(a))
+console.log(minHeap.top())
+console.log(minHeap.top())
+console.log(minHeap.top())
+console.log(minHeap.top())
+console.log(minHeap.top())
+console.log(minHeap.top())
+console.log(minHeap.top())
 console.log(minHeap.top())
 console.log(minHeap.top())
 console.log(minHeap.top())
