@@ -1,0 +1,20 @@
+function numberOfPaths(n, corridors){
+        let cycles = 0;
+        let map = new Map();
+        for (let pair of corridors) {
+                let [room1, room2] = pair;
+                if(!map.has(room1)) {
+                        map.set(room1, new Set);
+                }
+                map.get(room1).add(room2)
+                if(!map.has(room2)) {
+                        map.set(room2, new Set());
+                }
+                map.get(room2).add(room1);
+                let intercections = new Set([...map.get(room1)].filter(room => map.get(room2).has(room)))
+                cycles += intercections.size;
+        }
+        return cycles;
+}
+
+export { numberOfPaths };
